@@ -262,7 +262,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 100
   height: 100
-  scale: 0.3
+  scale: 25
+  octaves: 4
+  persistance: 0.5
+  lacunarity: 2
+  updateMap: 1
 --- !u!4 &826007032
 Transform:
   m_ObjectHideFlags: 0
