@@ -260,13 +260,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234fc0543bd3caf459e6bfe2ac1731e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapMode: 0
   width: 100
   height: 100
-  scale: 25
-  octaves: 4
-  persistance: 0.5
-  lacunarity: 2
+  scale: 2.66
+  octaves: 15
+  persistance: 0.33
+  lacunarity: 1.29
+  seed: 103
+  offset: {x: -9.6, y: 0}
   updateMap: 1
+  terrains:
+  - name: Water
+    height: 0.4
+    color: {r: 0, g: 0.7765689, b: 1, a: 0}
+  - name: Land
+    height: 1
+    color: {r: 0, g: 0.5660378, b: 0.038894396, a: 0}
 --- !u!4 &826007032
 Transform:
   m_ObjectHideFlags: 0
