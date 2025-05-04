@@ -263,12 +263,12 @@ MonoBehaviour:
   mapMode: 1
   width: 200
   height: 200
-  scale: 25
-  octaves: 5
+  scale: 32.5
+  octaves: 20
   persistance: 0.5
   lacunarity: 2
-  seed: 75
-  offset: {x: 0, y: 0}
+  seed: 156
+  offset: {x: 20.8, y: -9}
   updateMap: 1
   terrains:
   - name: Deep Water
@@ -285,7 +285,7 @@ MonoBehaviour:
     color: {r: 0.075649686, g: 0.6415094, b: 0.110702924, a: 0}
   - name: Hill
     height: 0.6
-    color: {r: 0.038581353, g: 0.4811321, b: 0.06605001, a: 1}
+    color: {r: 0, g: 0.4245283, b: 0.026298199, a: 1}
   - name: Mountain Low
     height: 0.7
     color: {r: 0.5283019, g: 0.26651832, b: 0.05233179, a: 0}
