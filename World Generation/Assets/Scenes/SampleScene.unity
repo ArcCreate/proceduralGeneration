@@ -267,7 +267,7 @@ MonoBehaviour:
   octaves: 20
   persistance: 0.5
   lacunarity: 2
-  seed: 156
+  seed: 179
   offset: {x: 20.8, y: -9}
   updateMap: 1
   terrains:
