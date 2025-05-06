@@ -20,9 +20,6 @@ public class TextureGenerator
         int width = heightMap.GetLength(0);
         int height = heightMap.GetLength(1);
 
-        // Create a new empty texture with same dimensions
-        Texture2D texture = new Texture2D(width, height);
-
         // Prepare a 1D color array to represent the texture pixels
         Color[] colorMap = new Color[width * height];
 
