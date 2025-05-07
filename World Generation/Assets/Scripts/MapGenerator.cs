@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public enum MapMode { NoiseMap, ColorMap, Mesh};
+    public enum MapMode { NoiseMap, ColorMap, Mesh, Falloff};
     public MapMode mapMode;
 
     public int width;
@@ -21,7 +21,14 @@ public class MapGenerator : MonoBehaviour
     public AnimationCurve heightCurve;
 
     public TerrainType[] terrains;
+    public bool fallOff;
 
+    float[,] falloffMap;
+
+    private void Awake()
+    {
+        falloffMap = FallOffMap.GenerateFallout(width);
+    }
     public void GenerateMap()
     {
         float[,] noiseMap = Noise.GenerateNoise(width, height, scale, octaves, persistance, lacunarity, seed, offset);
@@ -31,6 +38,10 @@ public class MapGenerator : MonoBehaviour
         {
             for(int x = 0;  x < width; x++)
             {
+                if (fallOff)
+                {
+                    noiseMap[x,y] =Mathf.Clamp01(noiseMap[x, y] - falloffMap[x, y]);
+                }
                 float currentHeight = noiseMap[x, y];
                 for(int i = 0; i < terrains.Length; ++i)
                 {
@@ -57,6 +68,10 @@ public class MapGenerator : MonoBehaviour
             display.DrawMesh(MeshGenerator.GenerateMesh(noiseMap, meshHeight, heightCurve), TextureGenerator.TextureFromColorMap(colourMap, width, height));
             display.DrawTecture(TextureGenerator.TextureFromColorMap(colourMap, width, height));
         }
+        else if(mapMode == MapMode.Falloff)
+        {
+            display.DrawTecture(TextureGenerator.TextureFromHeightMap(FallOffMap.GenerateFallout(width)));
+        }
 
     }
 
@@ -78,6 +93,7 @@ public class MapGenerator : MonoBehaviour
         {
             octaves = 0;
         }
+        falloffMap = FallOffMap.GenerateFallout(width);
     }
 }
 
