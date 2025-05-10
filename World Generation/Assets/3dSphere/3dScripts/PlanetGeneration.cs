@@ -28,10 +28,7 @@ public class PlanetGeneration : MonoBehaviour
     [HideInInspector]
     public bool colorSettingFoldout;
 
-    private void OnValidate()
-    {
-        generatePlanet();
-    }
+    public bool autoUpdate;
 
     // Initializes the mesh filters and face data for each of the six cube faces
     void Initialize()
@@ -102,13 +99,19 @@ public class PlanetGeneration : MonoBehaviour
     //updating mesh based on settings
     public void OnColorUpdate()
     {
-        Initialize();
-        GenerateColor();
+        if (autoUpdate)
+        {
+            Initialize();
+            GenerateColor();
+        }
     }
 
     public void OnShapeUpdate()
     {
-        Initialize();
-        GenerateMesh();
+        if (autoUpdate)
+        {
+            Initialize();
+            GenerateMesh();
+        }
     }
 }
