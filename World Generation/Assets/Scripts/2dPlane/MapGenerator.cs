@@ -31,7 +31,7 @@ public class MapGenerator : MonoBehaviour
     }
     public void GenerateMap()
     {
-        float[,] noiseMap = Noise.GenerateNoise(width, height, scale, octaves, persistance, lacunarity, seed, offset);
+        float[,] noiseMap = Noise2D.GenerateNoise(width, height, scale, octaves, persistance, lacunarity, seed, offset);
 
         Color[] colourMap = new Color[width * height];
         for(int y = 0; y < height; y++)
