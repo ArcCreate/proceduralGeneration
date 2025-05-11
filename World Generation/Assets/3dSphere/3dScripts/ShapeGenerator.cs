@@ -5,14 +5,14 @@ using UnityEngine;
 public class ShapeGenerator
 {
     ShapeSettings shapeSettings;
-    NoiseFilter[] noiseFilters;
+    InoiseFilter[] noiseFilters;
     public ShapeGenerator(ShapeSettings shapeSettings)
     {
         this.shapeSettings = shapeSettings;
-        this.noiseFilters = new NoiseFilter[shapeSettings.noiseLayers.Length];
+        this.noiseFilters = new InoiseFilter[shapeSettings.noiseLayers.Length];
         for(int i = 0; i < shapeSettings.noiseLayers.Length; i++)
         {
-            noiseFilters[i] = new NoiseFilter(shapeSettings.noiseLayers[i].noiseSettings);
+            noiseFilters[i] = NoiseFilterFactory.createNoiseFilter(shapeSettings.noiseLayers[i].noiseSettings);
         }
     }
 

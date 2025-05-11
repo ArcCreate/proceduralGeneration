@@ -12,25 +12,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea750482ff86e84cba0e860c40f26f8, type: 3}
   m_Name: Shape
   m_EditorClassIdentifier: 
-  planetRadius: 89.7
+  planetRadius: 100
   noiseLayers:
   - enaled: 1
     noiseSettings:
-      strength: 0.15
-      octaves: 5
-      baseRoughness: 1
-      roughness: 2.25
-      persistence: 0.5
-      centre: {x: 1, y: 2, z: 3}
-      minValue: 1
+      type: 0
+      simpleNoiseSettings:
+        strength: 0.15
+        octaves: 5
+        baseRoughness: 1
+        roughness: 3
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 1
+      rigidNoiseSettings:
+        strength: 1
+        octaves: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0
+    useMasking: 0
+  - enaled: 0
+    noiseSettings:
+      type: 0
+      simpleNoiseSettings:
+        strength: 1
+        octaves: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+      rigidNoiseSettings:
+        strength: 1
+        octaves: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0
     useMasking: 0
   - enaled: 1
     noiseSettings:
-      strength: 0.5
-      octaves: 8
-      baseRoughness: 1
-      roughness: 3
-      persistence: 0.5
-      centre: {x: 3, y: 2, z: 1}
-      minValue: 1.22
+      type: 1
+      simpleNoiseSettings:
+        strength: 1
+        octaves: 1
+        baseRoughness: 1
+        roughness: 2
+        persistence: 0.5
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+      rigidNoiseSettings:
+        strength: 0.15
+        octaves: 5
+        baseRoughness: 1
+        roughness: 4.44
+        persistence: 0.5
+        centre: {x: 3, y: 0, z: 0}
+        minValue: 1
+        weightMultiplier: 10
     useMasking: 0
