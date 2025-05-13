@@ -6,7 +6,8 @@ public class ShapeGenerator
 {
     ShapeSettings shapeSettings;
     InoiseFilter[] noiseFilters;
-    public ShapeGenerator(ShapeSettings shapeSettings)
+    public MinMaxHeight elevationMinMix;
+    public void UpdateSettings(ShapeSettings shapeSettings)
     {
         this.shapeSettings = shapeSettings;
         this.noiseFilters = new InoiseFilter[shapeSettings.noiseLayers.Length];
@@ -14,6 +15,7 @@ public class ShapeGenerator
         {
             noiseFilters[i] = NoiseFilterFactory.createNoiseFilter(shapeSettings.noiseLayers[i].noiseSettings);
         }
+        elevationMinMix = new MinMaxHeight();
     }
 
     public Vector3 CalculatePointOnPlanet(Vector3 point)
@@ -38,6 +40,8 @@ public class ShapeGenerator
                 height += noiseFilters[i].Evaluate(point) * maskk;
             }
         }
-        return point * shapeSettings.planetRadius * (1 + height);
+        height = shapeSettings.planetRadius * (1 + height);
+        elevationMinMix.AddValue(height);
+        return point * height;
     }
 }

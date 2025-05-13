@@ -13,7 +13,8 @@ public class PlanetGeneration : MonoBehaviour
     public ColorSettings colorSettings;
     public ShapeSettings shapeSettings;
 
-    ShapeGenerator shapeGenerator;
+    ShapeGenerator shapeGenerator = new ShapeGenerator();
+    ColorGenerator colorGenerator = new ColorGenerator();
 
     // Array of MeshFilter components, one for each cube face (6 in total).
     // Hidden in the Inspector to avoid clutter.
@@ -33,7 +34,8 @@ public class PlanetGeneration : MonoBehaviour
     // Initializes the mesh filters and face data for each of the six cube faces
     void Initialize()
     {
-        shapeGenerator = new ShapeGenerator(shapeSettings);
+        shapeGenerator.UpdateSettings(shapeSettings);
+        colorGenerator.UpdateSettings(colorSettings);
         // If meshFilters haven't been created yet, initialize them
         if (meshFilters == null || meshFilters.Length == 0)
         {
@@ -63,10 +65,11 @@ public class PlanetGeneration : MonoBehaviour
                 meshObj.transform.parent = transform; // Make it a child of the planet
 
                 // Add required components to render the mesh
-                meshObj.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+                meshObj.AddComponent<MeshRenderer>();
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }
+            meshFilters[i].GetComponent<MeshRenderer>().sharedMaterial = colorSettings.planetMaterial;
 
             // Create a SquareFace to generate the mesh for this face
             terrainFaces[i] = new SquareFace(meshFilters[i].sharedMesh, resolution, directions[i], shapeGenerator);
@@ -86,14 +89,12 @@ public class PlanetGeneration : MonoBehaviour
         {
             face.generateMesh();
         }
+        colorGenerator.UpdateElevation(shapeGenerator.elevationMinMix);
     }
 
     void GenerateColor()
     {
-        foreach(MeshFilter meshFilter in meshFilters)
-        {
-            meshFilter.GetComponent<MeshRenderer>().sharedMaterial.color = colorSettings.color;
-        }
+        colorGenerator.UpdateColors();
     }
 
     //updating mesh based on settings
