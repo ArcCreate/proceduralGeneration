@@ -124,11 +124,11 @@ Material:
     - _Surface: 0
     - _WaterDepth: 0
     - _WaterLevel: 3
-    - _Wave1Speed: 2
-    - _Wave2Speed: 2
+    - _Wave1Speed: 1.5
+    - _Wave2Speed: 1.5
     - _WaveAmp: 1.13
     - _WaveFrequency: 1
-    - _WaveS: 30
+    - _WaveS: 20
     - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
