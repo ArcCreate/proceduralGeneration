@@ -98,7 +98,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth: 0.41
+    - _Depth: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -114,7 +114,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _Smoothness: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -124,11 +124,12 @@ Material:
     - _Surface: 0
     - _WaterDepth: 0
     - _WaterLevel: 3
-    - _Wave1Speed: 1.5
-    - _Wave2Speed: 1.5
+    - _Wave1Speed: 0.25
+    - _Wave2Speed: 0.25
     - _WaveAmp: 1.13
     - _WaveFrequency: 1
-    - _WaveS: 20
+    - _WaveS: 25
+    - _WaveSM: 25
     - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -138,7 +139,7 @@ Material:
     - _Deep: {r: 0.21176472, g: 0.46274513, b: 0.6784314, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PlanetCenter: {r: 0, g: 0, b: 0, a: 0}
-    - _Shallow: {r: 0.33784264, g: 0.6838134, b: 0.9811321, a: 1}
+    - _Shallow: {r: 0.31743202, g: 0.6940325, b: 0.9433962, a: 1}
     - _Shalow: {r: 0.0039604935, g: 0.79955596, b: 0.8396226, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaveSpeed1: {r: 1, g: 1, b: 0, a: 0}
