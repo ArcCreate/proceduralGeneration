@@ -68,11 +68,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WavesNormal1:
-        m_Texture: {fileID: 2800000, guid: 03bec88c003e3a543a504f98d366bce5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c624440e994b4d4e9c23df11eeabcf3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WavesNormal2:
-        m_Texture: {fileID: 2800000, guid: 03bec88c003e3a543a504f98d366bce5, type: 3}
+        m_Texture: {fileID: 2800000, guid: d9c66009da9f5214e8a1349dd714a165, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -119,7 +119,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _Strength: 0.75
+    - _Strength: 1
     - _Strength_1: 10
     - _Surface: 0
     - _WaterDepth: 0
@@ -128,7 +128,7 @@ Material:
     - _Wave2Speed: 0.25
     - _WaveAmp: 1.13
     - _WaveFrequency: 1
-    - _WaveS: 25
+    - _WaveS: 0.5
     - _WaveSM: 25
     - _WaveSpeed: 1
     - _WorkflowMode: 1
@@ -142,8 +142,8 @@ Material:
     - _Shallow: {r: 0.31743202, g: 0.6940325, b: 0.9433962, a: 1}
     - _Shalow: {r: 0.0039604935, g: 0.79955596, b: 0.8396226, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _WaveSpeed1: {r: 1, g: 1, b: 0, a: 0}
-    - _WaveSpeed2: {r: 1, g: 1, b: 0, a: 0}
+    - _WaveSpeed1: {r: 0.05, g: 0.05, b: 0, a: 0}
+    - _WaveSpeed2: {r: -0.05, g: -0.05, b: 0, a: 0}
     - _WavesT1: {r: 10, g: 10, b: 0, a: 0}
     - _Wavest2: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
