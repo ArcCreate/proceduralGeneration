@@ -61,6 +61,7 @@ public class SquareFace
                 // Store the calculated vertex position
                 vertices[i] = shapeGenerator.CalculatePointOnPlanet(pointOnSphere);
 
+
                 // Create two triangles per grid square, except on the final row/column
                 if (x != resolution - 1 && y != resolution - 1)
                 {
@@ -81,6 +82,6 @@ public class SquareFace
         mesh.Clear();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
-        mesh.RecalculateNormals(); 
+        mesh.RecalculateNormals();
     }
 }
