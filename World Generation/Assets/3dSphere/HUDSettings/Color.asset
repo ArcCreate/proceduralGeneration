@@ -76,8 +76,8 @@ MonoBehaviour:
   steepnessThreshold: 0
   steepnessBlend: 0
   LowThreshold: 0.19
-  HighThreshold: 0.35
-  SteepThreshold: 0.25
+  HighThreshold: 0.4
+  SteepThreshold: 0.239
   GrassHeightLimit: 0
   ShoreLow: {r: 0.6803015, g: 0.69182384, b: 0.38072062, a: 0}
   ShoreHigh: {r: 0.91823894, g: 0.8672132, b: 0.1992404, a: 0}
