@@ -128,8 +128,8 @@ Material:
     - _Wave2Speed: 0.25
     - _WaveAmp: 1.13
     - _WaveFrequency: 1
-    - _WaveS: 0.5
-    - _WaveSM: 25
+    - _WaveS: 1
+    - _WaveSM: 1
     - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1

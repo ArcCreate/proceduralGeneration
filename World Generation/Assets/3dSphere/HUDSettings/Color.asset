@@ -72,18 +72,18 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  planetMaterial: {fileID: -876546973899608171, guid: 48616d2e0273def4ca67f8783920d6b2, type: 3}
-  steepnessThreshold: 0.73
-  steepnessBlend: 0.56
-  sandColor: {r: 0, g: 0, b: 0, a: 0}
-  rockyLowColor: {r: 0, g: 0, b: 0, a: 0}
-  rockyHighColor: {r: 0, g: 0, b: 0, a: 0}
-  grassA: {r: 0, g: 0, b: 0, a: 0}
-  grassB: {r: 0, g: 0, b: 0, a: 0}
-  grassC: {r: 0, g: 0, b: 0, a: 0}
-  grassD: {r: 0, g: 0, b: 0, a: 0}
-  grassMaxElevation: 0.6
-  flatSteepnessThreshold: 0.3
-  rockySteepnessThreshold: 0.6
-  elevationLowThreshold: 0.3
-  elevationHighThreshold: 0.7
+  planetMaterial: {fileID: 2100000, guid: a3cf4e954321f644281a4b6784b6918d, type: 2}
+  steepnessThreshold: 0
+  steepnessBlend: 0
+  LowThreshold: 0.19
+  HighThreshold: 0.35
+  SteepThreshold: 0.25
+  GrassHeightLimit: 0
+  ShoreLow: {r: 0.6803015, g: 0.69182384, b: 0.38072062, a: 0}
+  ShoreHigh: {r: 0.91823894, g: 0.8672132, b: 0.1992404, a: 0}
+  FlatLowA: {r: 0.27143103, g: 0.54088044, b: 0.100352004, a: 0}
+  FlatLowB: {r: 0.15686275, g: 0.4039216, b: 0, a: 0}
+  FlatHighA: {r: 0.20392159, g: 0.5921569, b: 0.06666667, a: 0}
+  FlatHighB: {r: 0.058823533, g: 0.34901962, b: 0.22352943, a: 0}
+  SteepLow: {r: 0.22012573, g: 0.22012573, b: 0.2014358, a: 1}
+  SteepHigh: {r: 0.45911938, g: 0.21425572, b: 0, a: 0}

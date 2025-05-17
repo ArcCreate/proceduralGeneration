@@ -15,21 +15,21 @@ public class ColorSettings : ScriptableObject
     public float steepnessBlend = 0.5f;
 
     //new elevation colors
-    // Color settings
-    public Color sandColor;
-    public Color rockyLowColor;
-    public Color rockyHighColor;
+    [Range(0f, 1f)] public float LowThreshold;
+    [Range(0f, 1f)] public float HighThreshold;
+    [Range(0f, 0.5f)] public float SteepThreshold;
+    [Range(0f, 1f)] public float GrassHeightLimit;
 
-    public Color grassA;
-    public Color grassB;
-    public Color grassC;
-    public Color grassD;
+    [Header("Color Controls")]
+    public Color ShoreLow;
+    public Color ShoreHigh;
 
-    // Control parameters
-    [Range(0, 1)] public float grassMaxElevation = 0.6f;
-    [Range(0, 1)] public float flatSteepnessThreshold = 0.3f;
-    [Range(0, 1)] public float rockySteepnessThreshold = 0.6f;
+    public Color FlatLowA;
+    public Color FlatLowB;
 
-    [Range(0, 1)] public float elevationLowThreshold = 0.3f;
-    [Range(0, 1)] public float elevationHighThreshold = 0.7f;
+    public Color FlatHighA;
+    public Color FlatHighB;
+
+    public Color SteepLow;
+    public Color SteepHigh;
 }
