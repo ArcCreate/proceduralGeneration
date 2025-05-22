@@ -75,9 +75,9 @@ MonoBehaviour:
   planetMaterial: {fileID: 2100000, guid: a3cf4e954321f644281a4b6784b6918d, type: 2}
   steepnessThreshold: 0
   steepnessBlend: 0
-  LowThreshold: 0.19
+  LowThreshold: 0.2
   HighThreshold: 0.4
-  SteepThreshold: 0.239
+  SteepThreshold: 0.3
   GrassHeightLimit: 0
   ShoreLow: {r: 0.6803015, g: 0.69182384, b: 0.38072062, a: 0}
   ShoreHigh: {r: 0.57547617, g: 0.5849056, b: 0.33659658, a: 0}
