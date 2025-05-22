@@ -6,7 +6,10 @@ Shader "Unlit/Clouds"
         _MainTex ("Noise Texture", 2D) = "white" {}
         _Speed ("Scroll Speed", Float) = 0.1
         _Scale ("Noise Scale", Float) = 1.0
+        _CloudThickness ("Cloud Thickness", Float) = 0.2
+        _AlphaMultiplier ("Alpha Multiplier", Float) = 0.6
     }
+
     SubShader
     {
         Tags { "Queue" = "Transparent" "RenderType" = "Transparent" "IgnoreProjector" = "True" }
@@ -27,6 +30,8 @@ Shader "Unlit/Clouds"
             float4 _CloudColor;
             float _Speed;
             float _Scale;
+            float _CloudThickness;
+            float _AlphaMultiplier;
 
             struct appdata
             {
@@ -48,13 +53,11 @@ Shader "Unlit/Clouds"
                 return o;
             }
 
-            // Simple hash function for pseudo-random value
             float hash(float3 p)
             {
                 return frac(sin(dot(p, float3(12.9898, 78.233, 45.164))) * 43758.5453);
             }
 
-            // Basic 3D value noise
             float noise(float3 p)
             {
                 float3 i = floor(p);
@@ -76,10 +79,21 @@ Shader "Unlit/Clouds"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float3 p = i.worldPos * _Scale;
-                p += _Time.y * _Speed; // Time.y is time in seconds
-                float d = noise(p);
-                float alpha = smoothstep(0.4, 0.7, d); // control cloud density
+                float3 p = i.worldPos * _Scale + _Time.y * _Speed;
+
+                // Sample cloud density at multiple depths
+                float d0 = noise(p);
+                float d1 = noise(p + float3(0.1, 0.1, 0.1) * _CloudThickness);
+                float d2 = noise(p - float3(0.1, 0.1, 0.1) * _CloudThickness);
+                float d = (d0 + d1 + d2) / 3.0;
+
+                float alpha = smoothstep(0.45, 0.65, d) * _AlphaMultiplier;
+
+                // Optional: fade clouds near edges (rim fade)
+                float3 viewDir = normalize(i.worldPos - _WorldSpaceCameraPos);
+                //float rim = saturate(dot(viewDir, normalize(i.worldPos)));
+                //alpha *= rim;
+
                 return float4(_CloudColor.rgb, alpha);
             }
             ENDCG
