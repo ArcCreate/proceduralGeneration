@@ -7,13 +7,14 @@ public class ColorGenerator
 {
 
     ColorSettings settings;
+    NewColorSetting newSettings;
     Texture2D texture;
     Texture2D steepTexture;
     const int resolution = 50;
 
-    public void UpdateSettings(ColorSettings settings)
+    public void UpdateSettings(NewColorSetting settings)
     {
-        this.settings = settings;
+        this.newSettings = settings;
         if(texture == null)
         {
             texture = new Texture2D(resolution, 1);
@@ -26,7 +27,8 @@ public class ColorGenerator
 
     public void UpdateElevation(MinMaxHeight elevationMinMax)
     {
-        settings.planetMaterial.SetVector("_elevationMinMax", new Vector4(elevationMinMax.Min, elevationMinMax.Max));
+        //settings.planetMaterial.SetVector("_elevationMinMax", new Vector4(elevationMinMax.Min, elevationMinMax.Max));
+        newSettings.planetMaterial.SetVector("_elevationMinMax", new Vector4(elevationMinMax.Min, elevationMinMax.Max));
     }
 
     public void UpdateColors()
@@ -70,6 +72,17 @@ public class ColorGenerator
 
         settings.planetMaterial.SetColor("_SteepLow", settings.SteepLow);
         settings.planetMaterial.SetColor("_SteepHigh", settings.SteepHigh);
+
+    }
+
+    public void UpdateColorsNew()
+    {
+        //shore
+        newSettings.planetMaterial.SetColor("_ShoreFlatColor", newSettings.shoreFlat);
+        newSettings.planetMaterial.SetColor("_ShoreSteepColor", newSettings.shoreSteep);
+        newSettings.planetMaterial.SetFloat("_ShoreMinHeight", newSettings.shoreMinHeight);
+        newSettings.planetMaterial.SetFloat("_ShoreMaxHeight", newSettings.shoreMaxHeight);
+        newSettings.planetMaterial.SetFloat("_ShoreSteepness", newSettings.shoreSteepness);
 
     }
 }

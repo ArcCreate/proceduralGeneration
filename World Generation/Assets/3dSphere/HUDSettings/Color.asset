@@ -16,11 +16,11 @@ MonoBehaviour:
     serializedVersion: 2
     key0: {r: 0.887042, g: 0.9245283, b: 0.21804899, a: 1}
     key1: {r: 0.46722776, g: 0.8805031, b: 0.34610963, a: 1}
-    key2: {r: 0.034571372, g: 0.47798735, b: 0.06209373, a: 1}
+    key2: {r: 0.034571372, g: 0.47798735, b: 0.06209373, a: 0}
     key3: {r: 0.5566038, g: 0.24878502, b: 0, a: 0}
     key4: {r: 0.3490566, g: 0.15790656, b: 0, a: 0}
     key5: {r: 1, g: 1, b: 1, a: 0}
-    key6: {r: 1, g: 1, b: 1, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 5632
     ctime1: 8832
@@ -28,34 +28,34 @@ MonoBehaviour:
     ctime3: 19840
     ctime4: 36095
     ctime5: 52223
-    ctime6: 65535
-    ctime7: 65535
+    ctime6: 0
+    ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 65535
+    atime2: 0
     atime3: 0
     atime4: 0
     atime5: 0
     atime6: 0
     atime7: 0
     m_Mode: 1
-    m_ColorSpace: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
   steepness:
     serializedVersion: 2
     key0: {r: 0.54107034, g: 0.6981132, b: 0.13830537, a: 1}
     key1: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 1}
-    key2: {r: 0.4431373, g: 0.20000002, b: 0, a: 0}
-    key3: {r: 0.40251565, g: 0.0037972545, b: 0.0037972545, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
     ctime1: 65535
-    ctime2: 65535
-    ctime3: 64895
+    ctime2: 0
+    ctime3: 0
     ctime4: 0
     ctime5: 0
     ctime6: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 1
-    m_ColorSpace: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   planetMaterial: {fileID: -876546973899608171, guid: 8f8d4dee3aaf41a43aafda1c451135bc, type: 3}

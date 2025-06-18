@@ -10,7 +10,8 @@ public class PlanetGeneration : MonoBehaviour
     public int resolution = 10;
 
     // Public settings
-    public ColorSettings colorSettings;
+    //public ColorSettings colorSettings;
+    public NewColorSetting colorSettings;
     public ShapeSettings shapeSettings;
 
     ShapeGenerator shapeGenerator = new ShapeGenerator();
@@ -94,7 +95,8 @@ public class PlanetGeneration : MonoBehaviour
 
     void GenerateColor()
     {
-        colorGenerator.UpdateColors();
+        //colorGenerator.UpdateColors();
+        colorGenerator.UpdateColorsNew();
     }
 
     //updating mesh based on settings
