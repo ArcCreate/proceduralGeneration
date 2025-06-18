@@ -72,7 +72,7 @@ MonoBehaviour:
     m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  planetMaterial: {fileID: 2100000, guid: a3cf4e954321f644281a4b6784b6918d, type: 2}
+  planetMaterial: {fileID: -876546973899608171, guid: 8f8d4dee3aaf41a43aafda1c451135bc, type: 3}
   steepnessThreshold: 0
   steepnessBlend: 0
   LowThreshold: 0.2
