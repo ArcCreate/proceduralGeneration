@@ -80,9 +80,16 @@ public class ColorGenerator
         //shore
         newSettings.planetMaterial.SetColor("_ShoreFlatColor", newSettings.shoreFlat);
         newSettings.planetMaterial.SetColor("_ShoreSteepColor", newSettings.shoreSteep);
-        newSettings.planetMaterial.SetFloat("_ShoreMinHeight", newSettings.shoreMinHeight);
-        newSettings.planetMaterial.SetFloat("_ShoreMaxHeight", newSettings.shoreMaxHeight);
+        newSettings.planetMaterial.SetFloat("_ShoreOriginHeight", newSettings.shoreOriginHeight);
+        newSettings.planetMaterial.SetFloat("_ShoreFadeHeight", newSettings.shoreFadeHeight);
         newSettings.planetMaterial.SetFloat("_ShoreSteepness", newSettings.shoreSteepness);
+
+        //grass/greens
+        newSettings.planetMaterial.SetColor("_GrassFlatColor", newSettings.grassFlat);
+        newSettings.planetMaterial.SetColor("_GrassSteepColor", newSettings.grassSteep);
+        newSettings.planetMaterial.SetFloat("_GrassOriginHeight", newSettings.grassOriginHeight);
+        newSettings.planetMaterial.SetFloat("_GrassFadeHeight", newSettings.grassFadeHeight);
+        newSettings.planetMaterial.SetFloat("_GrassSteepness", newSettings.grassSteepness);
 
     }
 }

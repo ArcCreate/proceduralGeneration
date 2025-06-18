@@ -100,14 +100,17 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GrassMaxHeight: 0
+    - _GrassMinHeight: 0.5
+    - _GrassSteepness: 0.1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShoreMaxHeight: 0.4
-    - _ShoreMinHeight: 0
+    - _ShoreMaxHeight: 0.1
+    - _ShoreMinHeight: 0.2
     - _ShoreSteepness: 0.1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -121,8 +124,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShoreFlatColor: {r: 1, g: 0, b: 0.057496548, a: 0}
-    - _ShoreSteepColor: {r: 0.9176471, g: 0.8862746, b: 0.48235297, a: 0}
+    - _GrassFlatColor: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 0}
+    - _GrassSteepColor: {r: 0.21465342, g: 0.72327036, b: 0.1387404, a: 0}
+    - _ShoreFlatColor: {r: 0.9176471, g: 0.8862746, b: 0.48235297, a: 0}
+    - _ShoreSteepColor: {r: 0.59119487, g: 0.503057, b: 0.26585174, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _elevationMinMax: {r: 112.92893, g: 149.03651, b: 0, a: 0}
   m_BuildTextureStacks: []
