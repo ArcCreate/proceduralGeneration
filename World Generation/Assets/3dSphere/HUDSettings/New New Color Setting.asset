@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: New New Color Setting
   m_EditorClassIdentifier: 
   planetMaterial: {fileID: 2100000, guid: 9ddb60ac9cd78a5488ea0cbdf363d40a, type: 2}
-  shoreFlat: {r: 0.9176471, g: 0.8862746, b: 0.48235297, a: 0}
-  shoreSteep: {r: 0.59119487, g: 0.503057, b: 0.26585174, a: 0}
-  shoreMinHeight: 0.2
-  shoreMaxHeight: 0.1
-  shoreSteepness: 0.1
+  shoreFlat: {r: 0.5921569, g: 0.5019608, b: 0.26666668, a: 1}
+  shoreOriginHeight: 0.2
+  shoreFadeHeight: 0.175
+  shoreSteepness: 0.05
   grassFlat: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 0}
-  grassSteep: {r: 0.21465342, g: 0.72327036, b: 0.1387404, a: 0}
-  grassMinHeight: 0.5
-  grassMaxHeight: 0
-  grassSteepness: 0.1
+  grassOriginHeight: 0.75
+  grassFadeHeight: 0
+  grassSteepness: 0.2
+  forestFlat: {r: 0.078431375, g: 0.2627451, b: 0.05882353, a: 0}
+  forestOriginHeight: 0
+  forestFadeHeight: 0
+  forestSteepness: 0
