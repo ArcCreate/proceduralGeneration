@@ -57,8 +57,8 @@ Material:
     - _NoiseFrequency: 1.5
     - _NoiseScale: 51.13
     - _Scale: 0.025
-    - _Speed: 1
-    - _StepCount: 8
+    - _Speed: 0.25
+    - _StepCount: 16
     - _StepSize: 0.26
     m_Colors:
     - _CloudColor: {r: 1, g: 1, b: 1, a: 1}
