@@ -126,9 +126,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SnowFadeHeight: 1
     - _SnowFlatFadeHeight: 1
-    - _SnowFlatOriginHeight: 0.5
+    - _SnowFlatOriginHeight: 0.525
     - _SnowFlatSteepness: 1
-    - _SnowOriginHeight: 0.65
+    - _SnowOriginHeight: 0.575
     - _SnowSteepness: 0.75
     - _SpecularHighlights: 1
     - _SpireFadeHeight: 0
@@ -150,7 +150,7 @@ Material:
     - _ShoreFlatColor: {r: 0.5921569, g: 0.5019608, b: 0.26666668, a: 1}
     - _ShoreSteepColor: {r: 0.91764706, g: 0.8862745, b: 0.48235294, a: 0}
     - _SnowColor: {r: 1, g: 1, b: 1, a: 0}
-    - _SnowFlatColor: {r: 0.18431373, g: 0.5568628, b: 0.8117647, a: 0}
+    - _SnowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 0}
     - _SnowFlatColor_1: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 0}

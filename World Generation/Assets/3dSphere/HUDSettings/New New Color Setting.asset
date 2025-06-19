@@ -25,12 +25,12 @@ MonoBehaviour:
   forestOriginHeight: 0.5
   forestFadeHeight: 0
   forestSteepness: 0.5
-  snowFlatColor: {r: 0.18431373, g: 0.5568628, b: 0.8117647, a: 0}
-  snowFlatOriginHeight: 0.5
+  snowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 0}
+  snowFlatOriginHeight: 0.525
   snowFlatFadeHeight: 1
   snowFlatSteepness: 1
   snow: {r: 1, g: 1, b: 1, a: 0}
-  snowOriginHeight: 0.65
+  snowOriginHeight: 0.575
   snowFadeHeight: 1
   snowSteepness: 0.75
   spireColor: {r: 1, g: 0.4555556, b: 0, a: 0}
