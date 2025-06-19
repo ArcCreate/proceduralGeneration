@@ -26,17 +26,28 @@ public class NewColorSetting : ScriptableObject
     [Range(0f, 1f)] public float forestFadeHeight;
     [Range(0f, 1f)] public float forestSteepness;
 
+    [Header("Snow Flats")]
+    public Color snowFlatColor;
+    [Range(0f, 1f)] public float snowFlatOriginHeight;
+    [Range(0f, 1f)] public float snowFlatFadeHeight;
+    [Range(0f, 1f)] public float snowFlatSteepness;
+
     [Header("Snow Caps")]
-    public Color snowFlat;
+    public Color snow;
     [Range(0f, 1f)] public float snowOriginHeight;
     [Range(0f, 1f)] public float snowFadeHeight;
     [Range(0f, 1f)] public float snowSteepness;
+
+    [Header("Vertical Shading")]
+    public Color spireColor;
+    [Range(0f, 1f)] public float spireOriginHeight;
+    [Range(0f, 1f)] public float spireFadeHeight;
+    [Range(0f, 1f)] public float spireSteepness;
 
     [Header("Cliff Face")]
     public Color cliffColor;
     [Range(0f, 1f)] public float cliffOriginHeight;
     [Range(0f, 1f)] public float cliffFadeHeight;
     [Range(0f, 1f)] public float cliffSteepness;
-
 
 }

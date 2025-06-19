@@ -95,5 +95,30 @@ public class ColorGenerator
         newSettings.planetMaterial.SetFloat("_ForestFadeHeight", newSettings.forestFadeHeight);
         newSettings.planetMaterial.SetFloat("_ForestSteepness", newSettings.forestSteepness);
 
+        // snow caps
+        newSettings.planetMaterial.SetColor("_SnowColor", newSettings.snow);
+        newSettings.planetMaterial.SetFloat("_SnowOriginHeight", newSettings.snowOriginHeight);
+        newSettings.planetMaterial.SetFloat("_SnowFadeHeight", newSettings.snowFadeHeight);
+        newSettings.planetMaterial.SetFloat("_SnowSteepness", newSettings.snowSteepness);
+
+        // cliff face
+        newSettings.planetMaterial.SetColor("_CliffColor", newSettings.cliffColor);
+        newSettings.planetMaterial.SetFloat("_CliffOriginHeight", newSettings.cliffOriginHeight);
+        newSettings.planetMaterial.SetFloat("_CliffFadeHeight", newSettings.cliffFadeHeight);
+        newSettings.planetMaterial.SetFloat("_CliffSteepness", newSettings.cliffSteepness);
+
+        // snow flats (high & flat)
+        newSettings.planetMaterial.SetColor("_SnowFlatColor", newSettings.snowFlatColor);
+        newSettings.planetMaterial.SetFloat("_SnowFlatOriginHeight", newSettings.snowFlatOriginHeight);
+        newSettings.planetMaterial.SetFloat("_SnowFlatFadeHeight", newSettings.snowFlatFadeHeight);
+        newSettings.planetMaterial.SetFloat("_SnowFlatSteepness", newSettings.snowFlatSteepness);
+
+        // vertical spires (steep & high)
+        newSettings.planetMaterial.SetColor("_SpireColor", newSettings.spireColor);
+        newSettings.planetMaterial.SetFloat("_SpireOriginHeight", newSettings.spireOriginHeight);
+        newSettings.planetMaterial.SetFloat("_SpireFadeHeight", newSettings.spireFadeHeight);
+        newSettings.planetMaterial.SetFloat("_SpireSteepness", newSettings.spireSteepness);
+
+
     }
 }
