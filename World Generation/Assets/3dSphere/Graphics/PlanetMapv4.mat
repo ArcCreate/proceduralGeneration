@@ -126,9 +126,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SnowFadeHeight: 1
     - _SnowFlatFadeHeight: 1
-    - _SnowFlatOriginHeight: 0.525
+    - _SnowFlatOriginHeight: 0.45
     - _SnowFlatSteepness: 1
-    - _SnowOriginHeight: 0.575
+    - _SnowOriginHeight: 0.5
     - _SnowSteepness: 0.75
     - _SpecularHighlights: 1
     - _SpireFadeHeight: 0
