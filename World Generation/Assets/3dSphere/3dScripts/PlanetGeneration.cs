@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class PlanetGeneration : MonoBehaviour
 {
@@ -86,10 +87,15 @@ public class PlanetGeneration : MonoBehaviour
 
     public void GenerateMesh()
     {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
         foreach (SquareFace face in terrainFaces)
         {
             face.generateMesh();
         }
+        sw.Stop();
+        UnityEngine.Debug.Log($"Mesh generation took {sw.ElapsedMilliseconds} ms");
         colorGenerator.UpdateElevation(shapeGenerator.elevationMinMix);
     }
 

@@ -103,22 +103,50 @@ public class HUDScipt : MonoBehaviour
             {
                 noise.rigidNoiseSettings.centre = seedCentre;
             }
+
+            // Second layer (if present): slight offset variation on X and Z
+            if (planetGen.shapeSettings.noiseLayers.Length > 1)
+            {
+                var layer2 = planetGen.shapeSettings.noiseLayers[1];
+                var noise2 = layer2.noiseSettings;
+
+                // Offset range -2 to +2
+                float offsetX = ((numericSeed % 5) - 2); // -2 to +2
+                float offsetZ = (((numericSeed / 7) % 5) - 2); // -2 to +2
+
+                Vector3 baseCentre = noise2.simpleNoiseSettings.centre;
+                noise2.simpleNoiseSettings.centre = new Vector3(
+                    baseCentre.x + offsetX,
+                    baseCentre.y,
+                    baseCentre.z + offsetZ
+                );
+
+                if (noise2.rigidNoiseSettings != null)
+                {
+                    Vector3 rigidCentre = noise2.rigidNoiseSettings.centre;
+                    noise2.rigidNoiseSettings.centre = new Vector3(
+                        rigidCentre.x + offsetX,
+                        rigidCentre.y,
+                        rigidCentre.z + offsetZ
+                    );
+                }
+            }
+
+            planetGen.generatePlanet();
         }
 
-        planetGen.generatePlanet();
-    }
-
-    int HashSeed(string input)
-    {
-        const int fnvPrime = 16777619;
-        const int offsetBasis = unchecked((int)2166136261);
-
-        int hash = offsetBasis;
-        foreach (char c in input)
+        int HashSeed(string input)
         {
-            hash ^= c;
-            hash *= fnvPrime;
+            const int fnvPrime = 16777619;
+            const int offsetBasis = unchecked((int)2166136261);
+
+            int hash = offsetBasis;
+            foreach (char c in input)
+            {
+                hash ^= c;
+                hash *= fnvPrime;
+            }
+            return Mathf.Abs(hash);
         }
-        return Mathf.Abs(hash);
     }
 }

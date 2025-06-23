@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShapeGenerator
 {
-    ShapeSettings shapeSettings;
+    public ShapeSettings shapeSettings;
     InoiseFilter[] noiseFilters;
     public MinMaxHeight elevationMinMix;
     public void UpdateSettings(ShapeSettings shapeSettings)
