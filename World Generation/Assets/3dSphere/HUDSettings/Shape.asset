@@ -23,7 +23,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 40, y: 40, z: 40}
+        centre: {x: 37.4, y: 137.4, z: 137.4}
         minValue: 0
       rigidNoiseSettings:
         strength: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 72.6, y: 172.6, z: 172.6}
+        centre: {x: 37.4, y: 137.4, z: 137.4}
         minValue: 0
         weightMultiplier: 0
     useMasking: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
         baseRoughness: 2
         roughness: 2
         persistence: 0.5
-        centre: {x: 5, y: 2, z: 2}
+        centre: {x: 9.25, y: 4, z: -7.63}
         minValue: 1
       rigidNoiseSettings:
         strength: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
+        centre: {x: 40.9, y: 133.9, z: 133.9}
         minValue: 0
         weightMultiplier: 0
     useMasking: 1
