@@ -84,7 +84,7 @@ public class PlanetGeneration : MonoBehaviour
         GenerateColor();
     }
 
-    void GenerateMesh()
+    public void GenerateMesh()
     {
         foreach (SquareFace face in terrainFaces)
         {

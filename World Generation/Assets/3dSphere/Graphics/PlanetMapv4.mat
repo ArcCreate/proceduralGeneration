@@ -141,20 +141,20 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 0}
+    - _CliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ForestFlatColor: {r: 0.0627451, g: 0.24705882, b: 0.043137256, a: 0}
-    - _GrassFlatColor: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 0}
+    - _ForestFlatColor: {r: 0.0627451, g: 0.24705882, b: 0.043137256, a: 1}
+    - _GrassFlatColor: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 1}
     - _GrassSteepColor: {r: 0.21465342, g: 0.72327036, b: 0.1387404, a: 0}
     - _ShoreFlatColor: {r: 0.5921569, g: 0.5019608, b: 0.26666668, a: 1}
     - _ShoreSteepColor: {r: 0.91764706, g: 0.8862745, b: 0.48235294, a: 0}
-    - _SnowColor: {r: 1, g: 1, b: 1, a: 0}
-    - _SnowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 0}
+    - _SnowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SnowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 1}
     - _SnowFlatColor_1: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 0}
-    - _elevationMinMax: {r: 113.225494, g: 150.91115, b: 0, a: 0}
+    - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 1}
+    - _elevationMinMax: {r: 112.87957, g: 150.67836, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1098462528617048255
 MonoBehaviour:

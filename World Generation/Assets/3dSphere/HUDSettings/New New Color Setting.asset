@@ -17,27 +17,27 @@ MonoBehaviour:
   shoreOriginHeight: 0.2
   shoreFadeHeight: 0.19
   shoreSteepness: 0.075
-  grassFlat: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 0}
+  grassFlat: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 1}
   grassOriginHeight: 0.35
   grassFadeHeight: 0.2
   grassSteepness: 0.5
-  forestFlat: {r: 0.0627451, g: 0.24705882, b: 0.043137256, a: 0}
+  forestFlat: {r: 0.0627451, g: 0.24705882, b: 0.043137256, a: 1}
   forestOriginHeight: 0.5
   forestFadeHeight: 0
   forestSteepness: 0.5
-  snowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 0}
+  snowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 1}
   snowFlatOriginHeight: 0.45
   snowFlatFadeHeight: 1
   snowFlatSteepness: 1
-  snow: {r: 1, g: 1, b: 1, a: 0}
+  snow: {r: 1, g: 1, b: 1, a: 1}
   snowOriginHeight: 0.5
   snowFadeHeight: 1
   snowSteepness: 0.75
-  spireColor: {r: 1, g: 0.4555556, b: 0, a: 0}
+  spireColor: {r: 1, g: 0.4555556, b: 0, a: 1}
   spireOriginHeight: 1
   spireFadeHeight: 0
   spireSteepness: 0.5
-  cliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 0}
+  cliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 1}
   cliffOriginHeight: 1
   cliffFadeHeight: 0.95
   cliffSteepness: 0
