@@ -33,6 +33,16 @@ public class PlanetGeneration : MonoBehaviour
 
     public bool autoUpdate;
 
+    [HideInInspector]
+    public float rotationSpeed = 10f;
+
+    void Update()
+    {
+        Vector3 tiltedAxis = (Vector3.up + Vector3.left * 0.3f).normalized;
+        transform.Rotate(tiltedAxis, rotationSpeed * Time.deltaTime, Space.Self);
+    }
+
+
     // Initializes the mesh filters and face data for each of the six cube faces
     void Initialize()
     {

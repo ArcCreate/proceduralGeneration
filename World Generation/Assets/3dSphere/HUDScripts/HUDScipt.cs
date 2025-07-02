@@ -26,6 +26,14 @@ public class HUDScipt : MonoBehaviour
     public Image box6;
     public Image box7;
 
+    //axis rotation slider
+    public Slider rotationSlider;
+
+    //id name
+    public TMP_Text planetIdText;
+    public TMP_Text systemNameText;
+
+
 
     void Start()
     {
@@ -35,6 +43,13 @@ public class HUDScipt : MonoBehaviour
         seedButtonLabel.text = "Randomize";
         UpdateBiomeColorBoxes();
     }
+
+    // Rotation slider
+    public void OnRotationChange()
+    {
+        planetGen.rotationSpeed = rotationSlider.value;
+    }
+
 
     //resolution slider
     public void resolutionChange()
@@ -85,6 +100,7 @@ public class HUDScipt : MonoBehaviour
     void ApplySeed(string seedString)
     {
         int numericSeed = HashSeed(seedString);
+        UpdatePlanetIdAndSystem(numericSeed);
 
         if (planetGen.shapeSettings.noiseLayers != null && planetGen.shapeSettings.noiseLayers.Length > 0)
         {
@@ -149,4 +165,43 @@ public class HUDScipt : MonoBehaviour
             return Mathf.Abs(hash);
         }
     }
+
+    void UpdatePlanetIdAndSystem(int numericSeed)
+    {
+        // More word-based, natural prefixes
+        string[] idPrefixes = { "PLANET", "WORLD", "SATELLITE", "MOON", "COLONY", "HABITAT", "OUTPOST", "STATION", "BASE", "HAVEN" };
+        string idPrefix = idPrefixes[numericSeed % idPrefixes.Length];
+
+        // Number part
+        int planetNumber = numericSeed % 9999;
+
+        // Build simple planet ID: PREFIX-0000
+        string planetId = $"{idPrefix}-{planetNumber:D4}";
+
+        // System name parts
+        string[] prefixes = { "ALPHA", "BETA", "GAMMA", "DELTA", "EPSILON", "ZETA", "OMEGA", "SIGMA", "TAU", "KAPPA", "LYRA", "VEGA", "NOVA", "ORION", "CYGNUS" };
+        string[] suffixes = { "PRIME", "NEXUS", "SECTOR", "OUTPOST", "STATION", "REACH", "HAVEN", "HUB", "BASIN" };
+        string[] romanNumerals = { "I", "II", "III", "IV", "V", "VI", "VII" };
+
+        int prefixIndex = (numericSeed / 100) % prefixes.Length;
+        int suffixIndex = (numericSeed / 1000) % suffixes.Length;
+        string roman = romanNumerals[(numericSeed / 7000) % romanNumerals.Length];
+
+        // Sometimes add double-prefix for extra flair
+        bool useDoublePrefix = (numericSeed / 2222) % 3 == 0;
+        string extraPrefix = prefixes[(numericSeed / 3333) % prefixes.Length];
+
+        string systemName = useDoublePrefix
+            ? $"{extraPrefix} {prefixes[prefixIndex]} {suffixes[suffixIndex]} {roman}"
+            : $"{prefixes[prefixIndex]} {suffixes[suffixIndex]} {roman}";
+
+        // Set UI text
+        if (planetIdText != null)
+            planetIdText.text = $"ID: {planetId}";
+        if (systemNameText != null)
+            systemNameText.text = $"SYSTEM: {systemName}";
+    }
+
+
+
 }
