@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaMultiplier: 0.75
+    - _AlphaMultiplier: 0.5
     - _CloudThickness: 1
     - _Density: 1
     - _DetailFrequency: -0.31

@@ -8,6 +8,7 @@ public class HUDScipt : MonoBehaviour
 {
     //public refrences
     public GameObject water, plainWater;
+    public Toggle waterCheckbox;
 
     //seed input and button
     public TMP_InputField seedInputField;
@@ -33,16 +34,79 @@ public class HUDScipt : MonoBehaviour
     public TMP_Text planetIdText;
     public TMP_Text systemNameText;
 
+    //dropdown
+    public TMP_Dropdown planetTypeDropdown;
+
+    //planettype settings
+    public ShapeSettings earthLikeShape;
+    public NewColorSetting earthLikeColor;
+    public ShapeSettings volcanicHellShape;
+    public NewColorSetting volcanicHellColor;
+
+    //atmoshpere
+    public Material atmosphereMaterial;
 
 
     void Start()
     {
+        planetTypeDropdown.onValueChanged.AddListener(OnPlanetTypeChanged);
         water.SetActive(true);
         plainWater.SetActive(false);
         seedInputField.onSubmit.AddListener(delegate { ApplyCustomSeed(); });
         seedButtonLabel.text = "Randomize";
         UpdateBiomeColorBoxes();
     }
+
+    //planet type drop down
+    void OnPlanetTypeChanged(int index)
+    {
+        string selected = planetTypeDropdown.options[index].text;
+
+        switch (selected)
+        {
+            case "Earth-Like":
+                ApplyEarthLikeSettings();
+                break;;
+            case "Volcanic Hell":
+                ApplyVolcanicSettings();
+                break;
+        }
+
+        planetGen.generatePlanet();
+        UpdateBiomeColorBoxes();
+    }
+
+    void ApplyEarthLikeSettings()
+    {
+        planetGen.shapeSettings = earthLikeShape;
+        planetGen.colorSettings = earthLikeColor;
+        //other
+        water.SetActive(true);
+        plainWater.SetActive(false);
+        waterCheckbox.interactable = true;
+        atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0, 0.573717177f, 0.749019682f, 255));
+        //resolution
+        resolutionSlider.minValue = 2;
+        resolutionSlider.maxValue = 256;
+        if (planetGen.resolution > 256)
+            planetGen.resolution = 256;
+    }
+    void ApplyVolcanicSettings()
+    {
+        planetGen.shapeSettings = volcanicHellShape;
+        planetGen.colorSettings = volcanicHellColor;
+        //other
+        water.SetActive(false);
+        plainWater.SetActive(false);
+        waterCheckbox.interactable = false;
+        atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.320754707f, 0, 0.01145487f, 255));
+        //resolution
+        resolutionSlider.minValue = 2;
+        resolutionSlider.maxValue = 175;
+        if (planetGen.resolution > 175)
+            planetGen.resolution = 175;
+    }
+
 
     // Rotation slider
     public void OnRotationChange()

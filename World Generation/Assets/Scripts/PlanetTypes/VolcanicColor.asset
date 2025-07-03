@@ -21,19 +21,19 @@ MonoBehaviour:
   grassOriginHeight: 0.304
   grassFadeHeight: 0.315
   grassSteepness: 0.619
-  forestFlat: {r: 0, g: 0, b: 0, a: 0}
+  forestFlat: {r: 0, g: 0, b: 0, a: 1}
   forestOriginHeight: 0.5
   forestFadeHeight: 0.15
   forestSteepness: 0.5
-  snowFlatColor: {r: 1, g: 0.27058825, b: 0, a: 0}
+  snowFlatColor: {r: 1, g: 0.27058825, b: 0, a: 1}
   snowFlatOriginHeight: 0.4
   snowFlatFadeHeight: 0.8
   snowFlatSteepness: 1
-  snow: {r: 0.72327036, g: 0.6811185, b: 0.0113721015, a: 0}
+  snow: {r: 0.72327036, g: 0.6811185, b: 0.0113721015, a: 1}
   snowOriginHeight: 0.5
   snowFadeHeight: 1
   snowSteepness: 0.7
-  spireColor: {r: 1, g: 0, b: 0.16898537, a: 0}
+  spireColor: {r: 1, g: 0, b: 0.16898537, a: 1}
   spireOriginHeight: 0
   spireFadeHeight: 1
   spireSteepness: 0.2
