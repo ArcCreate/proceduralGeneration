@@ -15,28 +15,28 @@ MonoBehaviour:
   planetMaterial: {fileID: -876546973899608171, guid: 5ae81df6c4dc337479e3f7d2f4e32056, type: 3}
   shoreFlat: {r: 1, g: 0, b: 0, a: 1}
   shoreOriginHeight: 0.2125
-  shoreFadeHeight: 0.15
-  shoreSteepness: 0.1
+  shoreFadeHeight: 0
+  shoreSteepness: 0.333
   grassFlat: {r: 0.23270428, g: 0, b: 0, a: 1}
   grassOriginHeight: 0.304
   grassFadeHeight: 0.315
   grassSteepness: 0.619
-  forestFlat: {r: 0, g: 0, b: 0, a: 1}
-  forestOriginHeight: 0.5
-  forestFadeHeight: 0.15
-  forestSteepness: 0.5
+  forestFlat: {r: 1, g: 0, b: 0, a: 1}
+  forestOriginHeight: 0.3
+  forestFadeHeight: 0
+  forestSteepness: 0.01
   snowFlatColor: {r: 1, g: 0.27058825, b: 0, a: 1}
   snowFlatOriginHeight: 0.4
   snowFlatFadeHeight: 0.8
   snowFlatSteepness: 1
   snow: {r: 0.72327036, g: 0.6811185, b: 0.0113721015, a: 1}
-  snowOriginHeight: 0.5
+  snowOriginHeight: 0.516
   snowFadeHeight: 1
-  snowSteepness: 0.7
+  snowSteepness: 1
   spireColor: {r: 1, g: 0, b: 0.16898537, a: 1}
-  spireOriginHeight: 0
+  spireOriginHeight: 0.215
   spireFadeHeight: 1
-  spireSteepness: 0.2
+  spireSteepness: 0.352
   cliffColor: {r: 0, g: 0, b: 0, a: 1}
   cliffOriginHeight: 1
   cliffFadeHeight: 0.95

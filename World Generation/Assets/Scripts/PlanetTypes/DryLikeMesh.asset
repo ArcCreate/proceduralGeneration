@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea750482ff86e84cba0e860c40f26f8, type: 3}
-  m_Name: DefaultMesh
+  m_Name: DryLikeMesh
   m_EditorClassIdentifier: 
   planetRadius: 110
   noiseLayers:
@@ -20,10 +20,10 @@ MonoBehaviour:
       simpleNoiseSettings:
         strength: 0.08
         octaves: 8
-        baseRoughness: 1
+        baseRoughness: 1.2
         roughness: 2
         persistence: 0.5
-        centre: {x: 37.4, y: 137.4, z: 137.4}
+        centre: {x: 17.5, y: 17.5, z: 17.5}
         minValue: 0
       rigidNoiseSettings:
         strength: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 14.5, y: 114.5, z: 114.5}
+        centre: {x: 17.5, y: 17.5, z: 17.5}
         minValue: 0
         weightMultiplier: 0
     useMasking: 0
@@ -39,20 +39,20 @@ MonoBehaviour:
     noiseSettings:
       type: 0
       simpleNoiseSettings:
-        strength: 3
+        strength: 2
         octaves: 8
-        baseRoughness: 2
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 7.25, y: 4, z: -8.63}
-        minValue: 1
+        baseRoughness: 1
+        roughness: 1
+        persistence: 0.6
+        centre: {x: 8.25, y: 4, z: -6.63}
+        minValue: 2
       rigidNoiseSettings:
         strength: 1
         octaves: 1
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 38.9, y: 133.9, z: 132.9}
+        centre: {x: 39.9, y: 133.9, z: 134.9}
         minValue: 0
         weightMultiplier: 0
     useMasking: 1
@@ -60,20 +60,20 @@ MonoBehaviour:
     noiseSettings:
       type: 1
       simpleNoiseSettings:
-        strength: 1
-        octaves: 1
+        strength: 2
+        octaves: 8
         baseRoughness: 1
         roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
+        persistence: 6.02
+        centre: {x: 1, y: 1, z: 1}
         minValue: 0
       rigidNoiseSettings:
         strength: 1
         octaves: 5
         baseRoughness: 1
-        roughness: 2
+        roughness: 1
         persistence: 0.5
         centre: {x: 3, y: 3, z: 3}
-        minValue: 1
-        weightMultiplier: 1
+        minValue: 0
+        weightMultiplier: 0.5
     useMasking: 1

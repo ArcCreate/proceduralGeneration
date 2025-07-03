@@ -42,6 +42,9 @@ public class HUDScipt : MonoBehaviour
     public NewColorSetting earthLikeColor;
     public ShapeSettings volcanicHellShape;
     public NewColorSetting volcanicHellColor;
+    public ShapeSettings marsLikeShape;
+    public NewColorSetting marsLikeColor;
+
 
     //atmoshpere
     public Material atmosphereMaterial;
@@ -69,6 +72,9 @@ public class HUDScipt : MonoBehaviour
                 break;;
             case "Volcanic Hell":
                 ApplyVolcanicSettings();
+                break;
+            case "Mars-Like":
+                ApplyMarsLikeSettings();
                 break;
         }
 
@@ -106,6 +112,23 @@ public class HUDScipt : MonoBehaviour
         if (planetGen.resolution > 175)
             planetGen.resolution = 175;
     }
+
+    void ApplyMarsLikeSettings()
+    {
+        planetGen.shapeSettings = marsLikeShape;
+        planetGen.colorSettings = marsLikeColor;
+        // other
+        water.SetActive(false);
+        plainWater.SetActive(false);
+        waterCheckbox.interactable = false;
+        atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.4f, 0.15f, 0.05f, 255));
+        // Resolution: allow similar detail as volcanic
+        resolutionSlider.minValue = 2;
+        resolutionSlider.maxValue = 200;
+        if (planetGen.resolution > 200)
+            planetGen.resolution = 200;
+    }
+
 
 
     // Rotation slider
