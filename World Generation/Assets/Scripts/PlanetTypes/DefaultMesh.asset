@@ -23,7 +23,7 @@ MonoBehaviour:
         baseRoughness: 1.1
         roughness: 2
         persistence: 0.5
-        centre: {x: 12.5, y: 112.5, z: 12.5}
+        centre: {x: 14.2, y: 14.2, z: 114.2}
         minValue: 0
       rigidNoiseSettings:
         strength: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 12.5, y: 112.5, z: 12.5}
+        centre: {x: 14.2, y: 14.2, z: 114.2}
         minValue: 0
         weightMultiplier: 0
     useMasking: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
         centre: {x: 0, y: 0, z: 0}
         minValue: 0
       rigidNoiseSettings:
-        strength: 1
+        strength: 0.5
         octaves: 8
         baseRoughness: 1
         roughness: 0
