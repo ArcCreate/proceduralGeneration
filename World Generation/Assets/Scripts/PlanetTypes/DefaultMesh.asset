@@ -20,10 +20,10 @@ MonoBehaviour:
       simpleNoiseSettings:
         strength: 0.08
         octaves: 8
-        baseRoughness: 1
+        baseRoughness: 1.1
         roughness: 2
         persistence: 0.5
-        centre: {x: 37.4, y: 137.4, z: 137.4}
+        centre: {x: 12.5, y: 112.5, z: 12.5}
         minValue: 0
       rigidNoiseSettings:
         strength: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 14.5, y: 114.5, z: 114.5}
+        centre: {x: 12.5, y: 112.5, z: 12.5}
         minValue: 0
         weightMultiplier: 0
     useMasking: 0
@@ -39,12 +39,12 @@ MonoBehaviour:
     noiseSettings:
       type: 0
       simpleNoiseSettings:
-        strength: 3
-        octaves: 8
+        strength: 2
+        octaves: 6
         baseRoughness: 2
         roughness: 2
         persistence: 0.5
-        centre: {x: 7.25, y: 4, z: -8.63}
+        centre: {x: 0.25, y: 4, z: -13.63}
         minValue: 1
       rigidNoiseSettings:
         strength: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
         baseRoughness: 1
         roughness: 2
         persistence: 0.5
-        centre: {x: 38.9, y: 133.9, z: 132.9}
+        centre: {x: 31.900002, y: 133.9, z: 127.899994}
         minValue: 0
         weightMultiplier: 0
     useMasking: 1
@@ -69,11 +69,11 @@ MonoBehaviour:
         minValue: 0
       rigidNoiseSettings:
         strength: 1
-        octaves: 5
+        octaves: 8
         baseRoughness: 1
-        roughness: 2
+        roughness: 0
         persistence: 0.5
         centre: {x: 3, y: 3, z: 3}
         minValue: 1
-        weightMultiplier: 1
+        weightMultiplier: 2
     useMasking: 1

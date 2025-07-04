@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetMaterial: {fileID: 2100000, guid: 9ddb60ac9cd78a5488ea0cbdf363d40a, type: 2}
   shoreFlat: {r: 0.5921569, g: 0.5019608, b: 0.26666668, a: 1}
-  shoreOriginHeight: 0.2
-  shoreFadeHeight: 0.19
-  shoreSteepness: 0.075
+  shoreOriginHeight: 0.25
+  shoreFadeHeight: 0.2
+  shoreSteepness: 0.1
   grassFlat: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 1}
   grassOriginHeight: 0.35
   grassFadeHeight: 0.2

@@ -9,6 +9,9 @@ public class HUDScipt : MonoBehaviour
     //public refrences
     public GameObject water, plainWater;
     public Toggle waterCheckbox;
+    //
+    public GameObject clouds;
+    public Toggle cloudCheckbox;
 
     //seed input and button
     public TMP_InputField seedInputField;
@@ -48,6 +51,8 @@ public class HUDScipt : MonoBehaviour
 
     //atmoshpere
     public Material atmosphereMaterial;
+    //clouds
+    public Material cloudsMaterial;
 
 
     void Start()
@@ -87,10 +92,12 @@ public class HUDScipt : MonoBehaviour
         planetGen.shapeSettings = earthLikeShape;
         planetGen.colorSettings = earthLikeColor;
         //other
-        water.SetActive(true);
-        plainWater.SetActive(false);
         waterCheckbox.interactable = true;
+        waterCheckbox.isOn = true;
+        plainWater.SetActive(false );
+        cloudCheckbox.interactable = true;
         atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0, 0.573717177f, 0.749019682f, 255));
+        cloudsMaterial.SetColor("_CloudColor", new Color(1, 1, 1));
         //resolution
         resolutionSlider.minValue = 2;
         resolutionSlider.maxValue = 256;
@@ -102,10 +109,12 @@ public class HUDScipt : MonoBehaviour
         planetGen.shapeSettings = volcanicHellShape;
         planetGen.colorSettings = volcanicHellColor;
         //other
+        waterCheckbox.isOn = false;
+        waterCheckbox.interactable = false;
         water.SetActive(false);
         plainWater.SetActive(false);
-        waterCheckbox.interactable = false;
         atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.320754707f, 0, 0.01145487f, 255));
+        cloudsMaterial.SetColor("_CloudColor", new Color(0.2515723f, 0.2515723f, 0.2515723f));
         //resolution
         resolutionSlider.minValue = 2;
         resolutionSlider.maxValue = 175;
@@ -118,9 +127,12 @@ public class HUDScipt : MonoBehaviour
         planetGen.shapeSettings = marsLikeShape;
         planetGen.colorSettings = marsLikeColor;
         // other
+        waterCheckbox.isOn = false;
+        waterCheckbox.interactable = false;
         water.SetActive(false);
         plainWater.SetActive(false);
-        waterCheckbox.interactable = false;
+        cloudCheckbox.isOn = false;
+        cloudCheckbox.interactable = false;
         atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.4f, 0.15f, 0.05f, 255));
         // Resolution: allow similar detail as volcanic
         resolutionSlider.minValue = 2;

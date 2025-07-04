@@ -117,11 +117,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShoreFadeHeight: 0.19
+    - _ShoreFadeHeight: 0.2
     - _ShoreMaxHeight: 0.1
     - _ShoreMinHeight: 0.2
-    - _ShoreOriginHeight: 0.2
-    - _ShoreSteepness: 0.075
+    - _ShoreOriginHeight: 0.25
+    - _ShoreSteepness: 0.1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SnowFadeHeight: 1
@@ -154,7 +154,7 @@ Material:
     - _SnowFlatColor_1: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 1}
-    - _elevationMinMax: {r: 112.19478, g: 156.19199, b: 0, a: 0}
+    - _elevationMinMax: {r: 112.650314, g: 151.50381, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1098462528617048255
 MonoBehaviour:
