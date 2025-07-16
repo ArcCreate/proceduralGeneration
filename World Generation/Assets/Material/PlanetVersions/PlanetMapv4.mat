@@ -90,9 +90,9 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CliffFadeHeight: 0.95
+    - _CliffFadeHeight: 1
     - _CliffOriginHeight: 1
-    - _CliffSteepness: 0
+    - _CliffSteepness: 0.659
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -100,40 +100,40 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _ForestFadeHeight: 0
-    - _ForestOriginHeight: 0.5
-    - _ForestSteepness: 0.5
+    - _ForestFadeHeight: 0.121
+    - _ForestOriginHeight: 1
+    - _ForestSteepness: 0.062
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrassFadeHeight: 0.2
+    - _GrassFadeHeight: 0
     - _GrassMaxHeight: 0
     - _GrassMinHeight: 0.5
-    - _GrassOriginHeight: 0.35
-    - _GrassSteepness: 0.5
+    - _GrassOriginHeight: 1
+    - _GrassSteepness: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShoreFadeHeight: 0.2
+    - _ShoreFadeHeight: 0.5
     - _ShoreMaxHeight: 0.1
     - _ShoreMinHeight: 0.2
-    - _ShoreOriginHeight: 0.25
-    - _ShoreSteepness: 0.1
+    - _ShoreOriginHeight: 0.089
+    - _ShoreSteepness: 0.121
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SnowFadeHeight: 1
     - _SnowFlatFadeHeight: 1
     - _SnowFlatOriginHeight: 0.45
-    - _SnowFlatSteepness: 1
-    - _SnowOriginHeight: 0.5
-    - _SnowSteepness: 0.75
+    - _SnowFlatSteepness: 0.095
+    - _SnowOriginHeight: 0.588
+    - _SnowSteepness: 0.173
     - _SpecularHighlights: 1
-    - _SpireFadeHeight: 0
+    - _SpireFadeHeight: 1
     - _SpireOriginHeight: 1
-    - _SpireSteepness: 0.5
+    - _SpireSteepness: 0.99
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -141,20 +141,20 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 1}
+    - _CliffColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ForestFlatColor: {r: 0.0627451, g: 0.24705882, b: 0.043137256, a: 1}
-    - _GrassFlatColor: {r: 0.14374927, g: 0.47058824, b: 0.10588234, a: 1}
+    - _ForestFlatColor: {r: 0.61635214, g: 0.6009553, b: 0.27716458, a: 1}
+    - _GrassFlatColor: {r: 0.45098042, g: 0.25882354, b: 0.098039225, a: 1}
     - _GrassSteepColor: {r: 0.21465342, g: 0.72327036, b: 0.1387404, a: 0}
-    - _ShoreFlatColor: {r: 0.5921569, g: 0.5019608, b: 0.26666668, a: 1}
+    - _ShoreFlatColor: {r: 0.14509805, g: 0.47058827, b: 0.10588236, a: 1}
     - _ShoreSteepColor: {r: 0.91764706, g: 0.8862745, b: 0.48235294, a: 0}
-    - _SnowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SnowFlatColor: {r: 0.20847668, g: 0.5578176, b: 0.7987421, a: 1}
+    - _SnowColor: {r: 0.27044016, g: 0.17181738, b: 0.08929625, a: 0}
+    - _SnowFlatColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowFlatColor_1: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 1}
-    - _elevationMinMax: {r: 112.87536, g: 142.83357, b: 0, a: 0}
+    - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 0}
+    - _elevationMinMax: {r: 102.97824, g: 127.156456, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1098462528617048255
 MonoBehaviour:

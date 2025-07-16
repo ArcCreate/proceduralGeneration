@@ -47,6 +47,8 @@ public class HUDScipt : MonoBehaviour
     public NewColorSetting volcanicHellColor;
     public ShapeSettings marsLikeShape;
     public NewColorSetting marsLikeColor;
+    public ShapeSettings waterWorldShape;
+    public NewColorSetting waterWorldColor;
 
 
     //atmoshpere
@@ -80,6 +82,9 @@ public class HUDScipt : MonoBehaviour
                 break;
             case "Mars-Like":
                 ApplyMarsLikeSettings();
+                break;
+            case "Ocean World":
+                ApplyWaterWorldSettings();
                 break;
         }
 
@@ -134,11 +139,30 @@ public class HUDScipt : MonoBehaviour
         cloudCheckbox.isOn = false;
         cloudCheckbox.interactable = false;
         atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.4f, 0.15f, 0.05f, 255));
-        // Resolution: allow similar detail as volcanic
+        // resolution
         resolutionSlider.minValue = 2;
         resolutionSlider.maxValue = 200;
         if (planetGen.resolution > 200)
             planetGen.resolution = 200;
+    }
+
+    void ApplyWaterWorldSettings()
+    {
+        planetGen.shapeSettings = waterWorldShape;
+        planetGen.colorSettings = waterWorldColor;
+        //other
+        waterCheckbox.interactable = true;
+        waterCheckbox.isOn = true;
+        plainWater.SetActive(false);
+        cloudCheckbox.interactable = true;
+        atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0, 0.573717177f, 0.749019682f, 255));
+        cloudsMaterial.SetColor("_CloudColor", new Color(1, 1, 1));
+        //resolution
+        resolutionSlider.minValue = 2;
+        resolutionSlider.maxValue = 256;
+        if (planetGen.resolution > 256)
+            planetGen.resolution = 256;
+
     }
 
 
