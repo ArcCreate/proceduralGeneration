@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a8e60fc25c1504bac41f003826de15, type: 3}
+  m_Name: IceColor
+  m_EditorClassIdentifier: 
+  planetMaterial: {fileID: -876546973899608171, guid: 5ae81df6c4dc337479e3f7d2f4e32056, type: 3}
+  shoreFlat: {r: 0.009987672, g: 0.5310146, b: 0.63522005, a: 1}
+  shoreOriginHeight: 0.35
+  shoreFadeHeight: 0
+  shoreSteepness: 1
+  grassFlat: {r: 0.30598077, g: 0.4549376, b: 0.509434, a: 1}
+  grassOriginHeight: 0.4
+  grassFadeHeight: 0
+  grassSteepness: 1
+  forestFlat: {r: 0.21953243, g: 0.31961724, b: 0.3773585, a: 1}
+  forestOriginHeight: 0.44
+  forestFadeHeight: 0
+  forestSteepness: 1
+  snowFlatColor: {r: 0.08381784, g: 0.1343619, b: 0.16352195, a: 1}
+  snowFlatOriginHeight: 0.715
+  snowFlatFadeHeight: 0
+  snowFlatSteepness: 0.1
+  snow: {r: 0.7927098, g: 0.84468496, b: 0.93710685, a: 1}
+  snowOriginHeight: 0.422
+  snowFadeHeight: 0.632
+  snowSteepness: 1
+  spireColor: {r: 0.55660367, g: 0.7447112, b: 1, a: 1}
+  spireOriginHeight: 1
+  spireFadeHeight: 0
+  spireSteepness: 0.05
+  cliffColor: {r: 0.24801232, g: 0.3313687, b: 0.3773585, a: 1}
+  cliffOriginHeight: 0.207
+  cliffFadeHeight: 1
+  cliffSteepness: 1

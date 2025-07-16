@@ -49,6 +49,8 @@ public class HUDScipt : MonoBehaviour
     public NewColorSetting marsLikeColor;
     public ShapeSettings waterWorldShape;
     public NewColorSetting waterWorldColor;
+    public ShapeSettings iceWorldShape;
+    public NewColorSetting iceWorldColor;
 
 
     //atmoshpere
@@ -85,6 +87,9 @@ public class HUDScipt : MonoBehaviour
                 break;
             case "Ocean World":
                 ApplyWaterWorldSettings();
+                break;
+            case "Ice World":
+                ApplyIceWorldSettings();
                 break;
         }
 
@@ -141,9 +146,9 @@ public class HUDScipt : MonoBehaviour
         atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0.4f, 0.15f, 0.05f, 255));
         // resolution
         resolutionSlider.minValue = 2;
-        resolutionSlider.maxValue = 200;
-        if (planetGen.resolution > 200)
-            planetGen.resolution = 200;
+        resolutionSlider.maxValue = 256;
+        if (planetGen.resolution > 256)
+            planetGen.resolution = 256;
     }
 
     void ApplyWaterWorldSettings()
@@ -159,9 +164,29 @@ public class HUDScipt : MonoBehaviour
         cloudsMaterial.SetColor("_CloudColor", new Color(1, 1, 1));
         //resolution
         resolutionSlider.minValue = 2;
-        resolutionSlider.maxValue = 256;
-        if (planetGen.resolution > 256)
-            planetGen.resolution = 256;
+        resolutionSlider.maxValue = 200;
+        if (planetGen.resolution > 200)
+            planetGen.resolution = 200;
+
+    }
+
+    void ApplyIceWorldSettings()
+    {
+        planetGen.shapeSettings = iceWorldShape;
+        planetGen.colorSettings = iceWorldColor;
+        //other
+        waterCheckbox.isOn = false;
+        waterCheckbox.interactable = false;
+        water.SetActive(false);
+        plainWater.SetActive(false);
+        cloudCheckbox.isOn = false;
+        cloudCheckbox.interactable = false;
+        atmosphereMaterial.SetColor("_AtmoshpeherColor", new Color(0, 0.573717177f, 0.749019682f, 255));
+        //resolution
+        resolutionSlider.minValue = 2;
+        resolutionSlider.maxValue = 200;
+        if (planetGen.resolution > 200)
+            planetGen.resolution = 200;
 
     }
 
