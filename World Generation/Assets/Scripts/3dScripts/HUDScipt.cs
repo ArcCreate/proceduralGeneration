@@ -335,13 +335,8 @@ public class HUDScipt : MonoBehaviour
         int suffixIndex = (numericSeed / 1000) % suffixes.Length;
         string roman = romanNumerals[(numericSeed / 7000) % romanNumerals.Length];
 
-        // Sometimes add double-prefix for extra flair
-        bool useDoublePrefix = (numericSeed / 2222) % 3 == 0;
-        string extraPrefix = prefixes[(numericSeed / 3333) % prefixes.Length];
-
-        string systemName = useDoublePrefix
-            ? $"{extraPrefix} {prefixes[prefixIndex]} {suffixes[suffixIndex]} {roman}"
-            : $"{prefixes[prefixIndex]} {suffixes[suffixIndex]} {roman}";
+        // Single prefix only
+        string systemName = $"{prefixes[prefixIndex]} {suffixes[suffixIndex]} {roman}";
 
         // Set UI text
         if (planetIdText != null)
@@ -349,7 +344,5 @@ public class HUDScipt : MonoBehaviour
         if (systemNameText != null)
             systemNameText.text = $"SYSTEM: {systemName}";
     }
-
-
 
 }

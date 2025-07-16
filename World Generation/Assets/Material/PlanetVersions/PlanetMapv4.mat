@@ -154,7 +154,7 @@ Material:
     - _SnowFlatColor_1: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpireColor: {r: 1, g: 0.4555556, b: 0, a: 1}
-    - _elevationMinMax: {r: 112.83629, g: 142.80931, b: 0, a: 0}
+    - _elevationMinMax: {r: 113.667435, g: 142.6105, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1098462528617048255
 MonoBehaviour:
