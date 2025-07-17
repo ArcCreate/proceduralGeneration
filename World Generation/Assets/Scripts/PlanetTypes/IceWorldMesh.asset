@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea750482ff86e84cba0e860c40f26f8, type: 3}
   m_Name: IceWorldMesh
   m_EditorClassIdentifier: 
-  planetRadius: 110
+  planetRadius: 100
   noiseLayers:
   - enaled: 1
     noiseSettings:

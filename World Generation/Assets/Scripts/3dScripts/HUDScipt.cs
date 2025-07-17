@@ -62,6 +62,8 @@ public class HUDScipt : MonoBehaviour
     void Start()
     {
         planetTypeDropdown.onValueChanged.AddListener(OnPlanetTypeChanged);
+        planetGen.shapeSettings = earthLikeShape;
+        planetGen.colorSettings = earthLikeColor;
         water.SetActive(true);
         plainWater.SetActive(false);
         seedInputField.onSubmit.AddListener(delegate { ApplyCustomSeed(); });
