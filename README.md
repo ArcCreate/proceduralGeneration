@@ -1,7 +1,7 @@
 # Procedural Terrain Generation
 This project used Unity to develop procedurally generated spherical planets using fractral perlin noise, custom mesh generation and dynamic shader in order to create realistic biomes and smooth variations based on varying world seeds.
 ## Project
-<img src = WorldGeneration/Assets/ReadMeAssets/DemoSS.png width = "350"> <img src = WorldGeneration/Assets/ReadMeAssets/marsDemo.png width = "350">
+<img src = WorldGeneration/Assets/ReadMeAssets/DemoSS.png width = "350"> <img src = WorldGeneration/Assets/ReadMeAssets/MarsDemo.png width = "350">
 > Example Planet Generations
 
 ### Core Features
