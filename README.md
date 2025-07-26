@@ -1,7 +1,8 @@
 # Procedural Terrain Generation
 This project used Unity to develop procedurally generated spherical planets using fractral perlin noise, custom mesh generation and dynamic shader in order to create realistic biomes and smooth variations based on varying world seeds.
 ## Project
-![Demo Screenshot](WorldGeneration/Assets/ReadMeAssets/DemoSS.png)
+<img src = WorldGeneration/Assets/ReadMeAssets/DemoSS.png width = "350"> <img src = WorldGeneration/Assets/ReadMeAssets/marsDemo.png width = "350">
+> Example Planet Generations
 
 ### Core Features
 1)  Five Distinct Planet Archetypes
@@ -19,15 +20,26 @@ This project used Unity to develop procedurally generated spherical planets usin
 
 ## Terrain Generation on Plane
 ### Fractral Perlin Noise
-**What is Perlin Noise?** Perlin Noise unlike normal noise is a coherent with changes occuring gradually. Singular perlin noise is smooth and doesn't resemble the jaggerdness of a mountain/land terrain; To counter this issue, octaves are used, multiple layers of noise with decreasing weight, creating more rugged and natural land generation. To control the octaves and their weight on the final height, we define 2 new variables.
-- Lacunarity which controles increase in the frequency of octaves. Higher lacunarity results in higher number of detailed features.
-- Persistence which controls the decrease in amplitude of octaves. Higher persistence results in more influence on final terrain, more scattered islands.  
+**What is Perlin Noise?** Perlin Noise is a type of gradient noise used extensively in procedural content generation due to its smooth, coherent nature. Unlike uniform or white noise, where values are completely uncorrelated, Perlin Noise produces gradual transitions between values, making it ideal for terrain generation. However, a single layer of Perlin Noise produces overly smooth results unsuitable for realistic terrain with rugged features. To enhance complexity and realism, Fractal Noise is used: this is achieved by layering multiple octaves of Perlin Noise.
+- Octaves: Each octave is a new layer of Perlin noise with increasing frequency and decreasing amplitude. Combining them yields a more natural, rugged appearance.
+- Lacunarity: Controls the increase in frequency of each successive octave. A higher lacunarity results in finer details.
+- Persistence: Controls the decrease in amplitude of each successive octave. A higher persistence retains more contribution from higher-frequency layers.
+
+>These parameters when combined control the roughness, feature scale and variability in the terrain. [Source]()
 <img src = WorldGeneration/Assets/ReadMeAssets/OctaveExplanation.png width = "300"> 
 
-### Mesh Generation through Height Map
-**Generating Simple Map of Terrain**.
-The 1st iteration of the map was a black and white noise generation which had controls to modify lucanrity, offset, persistence and size of the map.
-The 2nd iteration seeked to turn the black and white values into a heightmap which would then be used for coloring. This was done by iterating throughtout the whole matrix coords, and smoothstepping it over 0 - 1 where pure black is ocean and pure white is mountain peaks. This color scheme was purely generated on the height at a certain point and therefore the change from region to region is apparent and abrubt. 
+### **Mesh Generation**
+  1. **Base HeightMap Creation**. The initital stage involves generating a 2D grayscale noise map where dark regions (black) represent low elevation like ocean floor while light regions represent high elevations like mountains. Each value is normalized to a [0, 1] range avoiding unnatural terrain artifactls and a smoother gradient than raw perlin noise values; Values are then mapped to an elevation matrix which is used to generate a texture for viewing.
+   
+   <p style="padding-left: 40px">
+   </p>
+
+  2. **Coloring**. Terrain coloration is entirely based on elevation values for initial run; Because of this classification, coloring doesn't account for any biome blending resulting in harsh divides from one region to another and no variability in colors within a region.
+   <p align=center>
+      <img src = WorldGeneration/Assets/ReadMeAssets/BWmap.png width = "200">
+      <img src = WorldGeneration/Assets/ReadMeAssets/coloredMap.png width = "200">
+   </p>
+  3. **3D generation**
 
 
 ## Terrain generation on Isosphere
