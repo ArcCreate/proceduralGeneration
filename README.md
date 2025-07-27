@@ -11,7 +11,7 @@ Try It Yourself ^^
       <img src = WorldGeneration/Assets/ReadMeAssets/DemoSS.png width = "300"> <img src = WorldGeneration/Assets/ReadMeAssets/MarsDemo.png width = "300">
       - **Mars - Like**: Has no water or clouds. The mountains are more slim and extreme with most of them having ice covered peaks, they form mountain ranges spanning the entire planet and theres a quick dropoff between mountainous regions and flatter terrain.
       - **Ice World**: Terrain is characterized by medium frequency noise with strong vertical amplification. Elevation is evenly distributed across the surface, resulting in a rolling, windswept topology with pervasive steep hills and limited flat zones. Unlike Earth or Mars, there are few large scale features and no dominant ranges or major valleys, just relentless elevation changes with near random distribution.  
-      <img src = WorldGeneration/Assets/ReadMeAssets/IceDemo.png width = "300"> <img src = WorldGeneration/Assets/ReadMeAssets/LavaDemo.png width = "300">
+      <img src = WorldGeneration/Assets/ReadMeAssets/IceDemo.png width = "300"> <img src = WorldGeneration/Assets/ReadMeAssets/lavaDemo.png width = "300">
       - **Volcanic World**: Has no water or clouds and color pallete resmebles one of a planet engulfed in volcanoes and lava. Volcanoes are other considerably tall relative to surrounging regions and have an extrmeely wide base. Flat regions are few and often can be seen between valleys of differeing volcanoe bases.       
       <img src = WorldGeneration/Assets/ReadMeAssets/waterWorldDemo.png width = "300">
       - **Ocean - World**: Built from a noise profile heavily biased toward negative elevation, leading to a majority ocean coverage. Islands form from rare positive spikes in the base noise layer and are constrained in both height and spread by limiting vertical scale and amplitude across all layers. As a result, landforms remain low and isolated, with hilly terrain that gently rises from sea level and lacks any extended mountain systems.
@@ -74,6 +74,7 @@ Try It Yourself ^^
       >The resulting `int[] triangles` array stores this index data efficiently for rendering. For a `512 × 512` grid, this gives `261,121` quads -> `522,242` triangles -> `3,133,452` indices.
 
       Each vertex is assigned a UV coordinate for texturing, proportional to its normalized location on the grid. This ensures consistent texture sampling and allows biome data or colormaps to be projected cleanly across the surface.
+      <img src = WorldGeneration/Assets/ReadMeAssets/planeMesh.png>
 
 
 
