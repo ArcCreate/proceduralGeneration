@@ -12,34 +12,67 @@ This project used Unity to develop procedurally generated spherical planets usin
       - **Volcanic World**: Has no water or clouds and color pallete resmebles one of a planet engulfed in volcanoes and lava. Volcanoes are other considerably tall relative to surrounging regions and have an extrmeely wide base. Flat regions are few and often can be seen between valleys of differeing volcanoe bases. 
       - **Ocean - World**: Built from a noise profile heavily biased toward negative elevation, leading to a majority ocean coverage. Islands form from rare positive spikes in the base noise layer and are constrained in both height and spread by limiting vertical scale and amplitude across all layers. As a result, landforms remain low and isolated, with hilly terrain that gently rises from sea level and lacks any extended mountain systems.
   
-2) World generation is fully deterministic and driven by user-input seeds, which control the offset and phase shift of each terrain layer. This ensures that each unique seed yields a distinct planetary layout, including terrain shape, biome distribution, and elevation profile. Seeds support alphnumeric and symbolic inputs.
-3) Low resolution meshes offer rapid previews, while higher subdivisions create high fidelity terrains with smoother normals and more detailed geometry. Resolution settings directly affect vertex count and mesh granularity, impacting both terrain sharpness and performance.
-4) Physics based water shader which Implements a custom Shader Graph using the Fresnel effect to simulate light refraction and reflectance across a dynamic water surface. Ocean depth is also accounted for giving shorelines a more prominent look while deep oceans are darker and vast.
+2) World generation is fully deterministic and driven by **user-input seeds**, which control the offset and phase shift of each terrain layer. This ensures that each unique seed yields a distinct planetary layout, including terrain shape, biome distribution, and elevation profile. <u>Seeds support alphnumeric and symbolic inputs.</u>
+3) <u>Low resolution meshes offer rapid previews</u>, while higher subdivisions create high fidelity terrains with smoother normals and more detailed geometry. Resolution settings directly affect vertex count and mesh granularity, impacting both terrain sharpness and performance.
+4) **Physics based Water Shader** which implements a custom Shader Graph using the `Fresnel effect` to simulate light refraction and reflectance across a dynamic water surface. Ocean depth is also accounted for giving shorelines a more prominent look while deep oceans are darker and vast.
 
 #### [Try the project over WebGL](https://arccreate.github.io/proceduralGenerationBuild/)
 
 ## Terrain Generation on Plane
 ### Fractral Perlin Noise
-**What is Perlin Noise?** Perlin Noise is a type of gradient noise used extensively in procedural content generation due to its smooth, coherent nature. Unlike uniform or white noise, where values are completely uncorrelated, Perlin Noise produces gradual transitions between values, making it ideal for terrain generation. However, a single layer of Perlin Noise produces overly smooth results unsuitable for realistic terrain with rugged features. To enhance complexity and realism, Fractal Noise is used: this is achieved by layering multiple octaves of Perlin Noise.
-- Octaves: Each octave is a new layer of Perlin noise with increasing frequency and decreasing amplitude. Combining them yields a more natural, rugged appearance.
-- Lacunarity: Controls the increase in frequency of each successive octave. A higher lacunarity results in finer details.
-- Persistence: Controls the decrease in amplitude of each successive octave. A higher persistence retains more contribution from higher-frequency layers.
+**What is Perlin Noise?** Perlin Noise is a type of gradient noise used extensively in procedural content generation due to its smooth, coherent nature. Unlike uniform or white noise, where values are completely uncorrelated, Perlin Noise produces gradual transitions between values, making it ideal for terrain generation. However, a single layer of Perlin Noise produces overly smooth results unsuitable for realistic terrain with rugged features. To enhance complexity and realism, `Fractal Noise` is used: this is achieved by layering multiple octaves of Perlin Noise.
+| Parameter    | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| `scale`      | Controls zoom level into the noise pattern. Smaller = finer features.       |
+| `octaves`    | Number of noise layers stacked to form fractal noise. More = more detail.   |
+| `persistence`| Controls how amplitude decays per octave. Lower = less high-frequency impact.|
+| `lacunarity` | Controls how frequency grows per octave. Higher = finer details per layer.  |
+| `seed`       | Determines the pseudorandom offsets. Same seed = reproducible map.          |
+| `offset`     | Shifts the entire noise map in 2D space (used for dynamic scrolling).       |
 
->These parameters when combined control the roughness, feature scale and variability in the terrain. [Source]()
+---
 <img src = WorldGeneration/Assets/ReadMeAssets/OctaveExplanation.png width = "300"> 
 
+> By tuning these values, a wide variety of terrain types can be created from smooth rolling plains to jagged mountain ranges.
+---
+
 ### **Mesh Generation**
-  1. **Base HeightMap Creation**. The initital stage involves generating a 2D grayscale noise map where dark regions (black) represent low elevation like ocean floor while light regions represent high elevations like mountains. Each value is normalized to a [0, 1] range avoiding unnatural terrain artifactls and a smoother gradient than raw perlin noise values; Values are then mapped to an elevation matrix which is used to generate a texture for viewing.
+  1. **Base HeightMap Creation**. The first step involves creating a `2D heightmap` using fractal Perlin Noise. Each (x, y) coordinate on the map is assigned a height value computed using multiple octaves of Perlin noise, producing layered detail and variation. After computing raw heights, values are normalized using `Mathf.InverseLerp(min, max, value)` to ensure all data fits within [0, 1], creating a smooth elevation gradient. 
+      > Dark pixels = Low elevation (Ocean/Water).  
+      White pixels = High elevation (Mountain top)
    
    <p style="padding-left: 40px">
    </p>
 
-  2. **Coloring**. Terrain coloration is entirely based on elevation values for initial run; Because of this classification, coloring doesn't account for any biome blending resulting in harsh divides from one region to another and no variability in colors within a region.
+  2. **Coloring**. Once the heightmap is generated, terrain is colored based strictly on `elevation thresholds`. This method uses a `discrete classification system`, assigning colors such as blue for water, green for plains, or white for snow. This approach produces visually distinct biome bands but lacks gradient blending or moisture/temperature based biome simulation, resulting in sharp, unnatural transitions between regions.
    <p align=center>
       <img src = WorldGeneration/Assets/ReadMeAssets/BWmap.png width = "200">
       <img src = WorldGeneration/Assets/ReadMeAssets/coloredMap.png width = "200">
    </p>
-  3. **3D generation**
+   
+  3. **3D generation**. Once the 2D heightmap is generated, it is passed into a mesh construction routine that converts elevation values into a 3D surface using vertex displacement, triangle indexing, and UV mapping.
+   
+      For Vertex Placement, each point on the heightmap is sampled and mapped to a `Vector3` in world space
+      ```csharp
+      meshData.vertices[vindex] = new Vector3(
+          topLeftX + (width - 1 - x),
+          heightCurve.Evaluate(heightMap[x, y]) * multiplier,
+          topLeftZ - (height - 1 - y)
+      );
+      ```
+      This centers the mesh at the origin, transforming the 2D grid into a top-down Cartesian plane where the `y` axis represents vertical displacement. The `heightCurve` allows non-linear remapping of height values (e.g. exaggerating midrange altitudes or flattening peaks), and `multiplier` acts as a global vertical scale factor.
+
+      The mesh is then constructed using indexed triangles where for each quad of four adjacent vertices and of these quads is split into two triangles, because modern graphics hardware renders surfaces as a collection of triangles.
+
+      ```csharp
+      meshData.AddTraingles(vindex, vindex + width + 1, vindex + width);
+      meshData.AddTraingles(vindex + width + 1, vindex, vindex + 1);
+      ```
+
+      >The resulting `int[] triangles` array stores this index data efficiently for rendering. For a `512 × 512` grid, this gives `261,121` quads -> `522,242` triangles -> `3,133,452` indices.
+
+      Each vertex is assigned a UV coordinate for texturing, proportional to its normalized location on the grid. This ensures consistent texture sampling and allows biome data or colormaps to be projected cleanly across the surface.
+
 
 
 ## Terrain generation on Isosphere
