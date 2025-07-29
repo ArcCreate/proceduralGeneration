@@ -82,3 +82,8 @@ Try It Yourself ^^
 ## Biome Coloration and Shaders
 ## Resources Used
 ## Steps to Build Upon
+- Dynamic LOD for real time terrain scaling allowing users to zoom into the planets with greater fetail.
+- Clouds using volumetric ray tracing allowing it to be a physical 3d layer of noise instead of just being a spherical plane
+- More biome coloring dependent on tempreture/moisture control (nearing equator is higher chance of desert while the poles are colder/snowy)
+- Ability to spawn in # of moons for each planet which revolve around the current planet
+- New page allowing customization of a planet from terrain noise to biome coloring and differentiation
