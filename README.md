@@ -79,6 +79,83 @@ Try It Yourself ^^
 
 
 ## Terrain generation on Isosphere
+Generating terrain on a sphere involves displacing vertices on an icosphere mesh using fractal Perlin noise sampled in 3D space. Unlike plane-based noise where height is applied to a 2D grid, the isosphere uses a normalized vector from the center of the sphere, displacing vertices radially to simulate elevation while preserving the sphere's topology.
+### Base Mesh: The Icosphere
+
+- The isosphere is created by recursively subdividing a regular icosahedron into a high-density triangular mesh.
+- This mesh is preferred over a UV sphere due to its **even triangle distribution**, avoiding distortion at poles.
+
+```csharp
+Mesh icosphere = IcosphereGenerator.Create(radius: 1f, subdivisions: 5);
+Vector3[] vertices = icosphere.vertices;
+```
+
+All vertices lie on the **unit sphere** (`|v| = 1`), forming the base for spherical terrain displacement.
+
+### Noise Sampling in 3D
+
+Fractal noise is applied **directionally**, using each vertex’s unit vector (`Vector3.normalized`) as input to a 3D noise function:
+
+```csharp
+Vector3 direction = vertex.normalized;
+float elevation = FractalNoise3D(direction, octaves, lacunarity, persistence, seed);
+```
+
+
+### Fractal 3D Perlin Noise
+
+Each noise layer (octave) is sampled at increasing frequency and decreasing amplitude:
+
+```csharp
+float FractalNoise3D(Vector3 point, int octaves, float lacunarity, float persistence, int seed)
+{
+    float total = 0f;
+    float amplitude = 1f;
+    float frequency = 1f;
+    float maxValue = 0f;
+
+    for (int i = 0; i < octaves; i++)
+    {
+        float noise = PerlinNoise3D(point * frequency + offset[i]);
+        total += noise * amplitude;
+
+        maxValue += amplitude;
+        amplitude *= persistence;
+        frequency *= lacunarity;
+    }
+
+    return total / maxValue; // Normalize to [0,1]
+}
+```
+
+> `PerlinNoise3D()` is a custom 3D noise implementation (since Unity only provides 2D Perlin natively).
+
+
+### Vertex Displacement (Radial)
+
+Each vertex is displaced radially outward from the center based on the sampled elevation:
+
+```csharp
+vertex = direction * (1 + elevationCurve.Evaluate(elevation) * heightMultiplier);
+```
+
+- `direction`: Normalized position from the sphere center  
+- `elevationCurve`: `AnimationCurve` to shape the terrain (e.g. flatten lowlands or sharpen peaks)  
+- `heightMultiplier`: Controls vertical exaggeration of terrain
+
+
+### Rebuilding the Mesh
+
+After modifying all vertices:
+
+```csharp
+mesh.vertices = displacedVertices;
+mesh.RecalculateNormals();
+mesh.RecalculateBounds();
+```
+
+> Recalculating normals is essential for proper lighting and shader effects.
+
 ## Biome Coloration and Shaders
 ## Resources Used
 ## Steps to Build Upon
